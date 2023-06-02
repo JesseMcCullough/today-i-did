@@ -1,0 +1,70 @@
+nav {
+    background-color: #FFFFFF;
+    width: 170px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 40px;
+    align-items: center;
+}
+
+nav ul {
+    list-style-type: none;
+    width: 100%;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-color);
+    height: 45px;
+    width: 100%;
+    padding-left: 40px;
+    transition: background-color 0.4s;
+}
+
+.active,
+nav a:hover {
+    background-color: #F1F1F1;
+}
+
+nav .sign-out {
+    color: #ACACAC;
+    font-size: 0.9em;
+    text-decoration: underline;
+}
+
+nav .user {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav .button-cta {
+    width: 130px;
+    height: 30px;
+    padding: 0;
+    justify-content: center;
+    background-color: #61EE7D;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 15px;
+    font-size: 1em;
+    transition: background-color 0.4s, color 0.4s, width 0.4s, border-radius 0.4s;
+    cursor: pointer;
+    margin-bottom: 40px;
+}
+
+nav .button-cta:hover {
+    background-color: #F1F1F1;
+    width: 100%;
+    border-radius: 0;
+    color: var(--text-color);
+}
+
+nav .icon {
+    width: 20px;
+    margin-right: 8px;
+}
