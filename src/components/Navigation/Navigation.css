@@ -57,6 +57,7 @@ nav .button-cta {
     margin-bottom: 40px;
 }
 
+nav .button-cta.active,
 nav .button-cta:hover {
     background-color: #F1F1F1;
     width: 100%;
