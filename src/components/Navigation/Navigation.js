@@ -13,9 +13,9 @@ function Navigation() {
             </div>
             <NavLink to="/add-day" className="button-cta">Add Day</NavLink>
             <ul>
-                <li><NavLink to="/days"><img src={daysIcon} class="icon" alt=""/>Days</NavLink></li>
-                <li><NavLink to="/activities"><img src={activitiesIcon} class="icon" alt=""/>Activities</NavLink></li>
-                <li><NavLink to="/journals"><img src={journalsIcon} class="icon" alt=""/>Journals</NavLink></li>
+                <li><NavLink to="/days"><img src={daysIcon} className="icon" alt=""/>Days</NavLink></li>
+                <li><NavLink to="/activities"><img src={activitiesIcon} className="icon" alt=""/>Activities</NavLink></li>
+                <li><NavLink to="/journals"><img src={journalsIcon} className="icon" alt=""/>Journals</NavLink></li>
             </ul>
         </nav>
     ) 
