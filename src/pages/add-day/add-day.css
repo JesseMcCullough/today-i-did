@@ -1,0 +1,94 @@
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+input[type="date"] {
+    background: none;
+    outline: none;
+    border: none;
+    font-family: Arial;
+    color: var(--text-color);  
+    position: relative;
+    border-bottom: 1px solid var(--text-color);
+    display: block;
+    margin: 0 auto;
+}
+
+input[type="date"]::before {
+    content: attr(data-date);
+}
+
+input::-webkit-datetime-edit, input::-webkit-inner-spin-button, input::-webkit-clear-button {
+    display: none;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    color: var(--text-color);
+    border-bottom: 1px solid var(--text-color);
+    cursor: pointer;
+    height: auto;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: auto;
+    transform: scale(12);
+}
+
+input[type="text"] {
+    height: 55px;
+    border: none;
+    outline: none;
+    padding: 20px;
+    border-radius: 15px;
+    width: 90%;
+    box-shadow: 0 3px 10px #C7C7C7;
+    transition: width 0.4s;
+}
+
+.container {
+    display: flex;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    width: 80%;
+}
+
+.add-activity,
+.remove-activity {
+    height: 55px;
+    width: 55px;
+    color: #FFFFFF;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 3px 10px #C7C7C7;
+    margin-left: 10px;
+    font-size: 2.5em;
+    cursor: pointer;
+    transition: background-color 0.4s;
+}
+
+.add-activity {
+    background-color: #6DEE7A;
+}
+
+.add-activity:hover {
+    background-color: #5EC969;
+}
+
+.remove-activity {
+    background-color: #EE6D6D;
+}
+
+.remove-activity:hover {
+    background-color: #CC5959;
+}
+
+.container.added button {
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+.container.added:hover button {
+    opacity: 1;
+}
