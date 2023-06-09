@@ -66,22 +66,6 @@ textarea {
     height: 110px;
 }
 
-.container {
-    display: flex;
-    margin: 0 auto;
-    margin-bottom: 20px;
-    width: 80%;
-}
-
-.container.added button {
-    opacity: 0;
-    transition: opacity 0.4s;
-}
-
-.container.added:hover button {
-    opacity: 1;
-}
-
 form {
     position: relative;
 }

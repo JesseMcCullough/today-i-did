@@ -51,25 +51,21 @@ function AddDay() {
                 max={today} onChange={event => handleDateChange(event)} />
             <h1>What did you do today?</h1>
 
-            <div className={styles.container}>
-                <ActivityField key={activityId} id={activityId}
-                    activity={activities[activities.length - 1].activity}
-                    handleActivityChange={handleActivityChange}
-                    handleAddActivity={handleAddActivity} isAdded={false} />
-            </div>
+            <ActivityField key={activityId} id={activityId}
+                activity={activities[activities.length - 1].activity}
+                handleActivityChange={handleActivityChange}
+                handleAddActivity={handleAddActivity} isAdded={false} />
 
             {reverseActivities.map(activity =>
                 activity.id === activityId ? "" :
-                <div className={`${styles.container} ${styles.added}`} key={activity.id}>
-                    <ActivityField key={activity.id} id={activity.id}
-                        activity={activity.activity}
-                        handleActivityChange={handleActivityChange}
-                        handleDeleteActivity={handleDeleteActivity} isAdded={true} />
-                </div>
+                <ActivityField key={activity.id} id={activity.id}
+                    activity={activity.activity}
+                    handleActivityChange={handleActivityChange}
+                    handleDeleteActivity={handleDeleteActivity} isAdded={true} />
             )}
 
             <h2>How do you feel about today?</h2>
-            <div className={styles.container}>
+            <div className="container">
                 <textarea placeholder="Add journal" value={journal}
                     onChange={event => handleJournalChange(event)}>
                 </textarea>

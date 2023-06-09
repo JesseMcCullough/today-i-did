@@ -27,3 +27,19 @@
 .removeActivity:hover {
     background-color: #CC5959;
 }
+
+:global(.container) {
+    display: flex;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    width: 80%;
+}
+
+.added button {
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+.added:hover button {
+    opacity: 1;
+}

@@ -2,8 +2,10 @@ import styles from "./ActivityField.module.css";
 
 function ActivityField({ id, activity, handleActivityChange, handleAddActivity,
     handleDeleteActivity, isAdded }) {
+    const divClassName = isAdded ? `container ${styles.added}` : "container";
+
     return (
-        <>
+        <div className={divClassName}>
             <input type="text" value={activity} 
                 name="new-activity" onChange={event => handleActivityChange(event, id)}
                 placeholder="Add activity" />
@@ -11,7 +13,7 @@ function ActivityField({ id, activity, handleActivityChange, handleAddActivity,
                 onClick={() => handleDeleteActivity(id)}>-</button> :
                 <button className={styles.addActivity} type="button"
                     onClick={() => handleAddActivity()}>+</button>}
-        </>
+        </div>
     );
 }
 
