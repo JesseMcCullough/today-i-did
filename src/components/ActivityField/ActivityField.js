@@ -4,7 +4,8 @@ function ActivityField({ id, activity, handleActivityChange, handleDeleteActivit
     return (
         <div className={divClassName}>
             <input type="text" value={activity} 
-                name="new-activity" onChange={event => handleActivityChange(event, id)} />
+                name="new-activity" onChange={event => handleActivityChange(event, id)}
+                placeholder="Add activity" />
             {isAdded ? <button className="remove-activity"
                 onClick={() => handleDeleteActivity(id)}>-</button> :
                 <button className="add-activity">+</button>}

@@ -45,6 +45,7 @@ input[type="text"] {
     width: 90%;
     box-shadow: 0 3px 10px #C7C7C7;
     transition: width 0.4s;
+    font-size: 1em;
 }
 
 .container {
