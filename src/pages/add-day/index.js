@@ -7,7 +7,7 @@ let activityId = 0;
 
 function AddDay() {
     const [date, setDate] = useState(today);
-    const [activities, setActivities] = useState([{ id: 0, activity: "" }]);
+    const [activities, setActivities] = useState([{ id: activityId, activity: "" }]);
 
     function handleDateChange(event) {
         setDate(event.target.value);
