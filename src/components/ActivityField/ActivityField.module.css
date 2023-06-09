@@ -1,0 +1,29 @@
+.addActivity,
+.removeActivity {
+    height: 55px;
+    width: 55px;
+    color: #FFFFFF;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 3px 10px #C7C7C7;
+    margin-left: 10px;
+    font-size: 2.5em;
+    cursor: pointer;
+    transition: background-color 0.4s;
+}
+
+.addActivity {
+    background-color: #6DEE7A;
+}
+
+.addActivity:hover {
+    background-color: #5EC969;
+}
+
+.removeActivity {
+    background-color: #EE6D6D;
+}
+
+.removeActivity:hover {
+    background-color: #CC5959;
+}

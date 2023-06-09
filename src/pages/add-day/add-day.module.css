@@ -1,6 +1,11 @@
-h1 {
+h1, h2 {
     text-align: center;
     margin-bottom: 20px;
+    font-size: 2em;
+}
+
+h2 {
+    margin-top: 40px;
 }
 
 input[type="date"] {
@@ -48,41 +53,24 @@ input[type="text"] {
     font-size: 1em;
 }
 
+textarea {
+    padding: 20px;
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    box-shadow: 0 3px 10px #C7C7C7;
+    font-size: 1em;
+    font-family: Arial;
+    width: 90%;
+    resize: none;
+    height: 110px;
+}
+
 .container {
     display: flex;
     margin: 0 auto;
     margin-bottom: 20px;
     width: 80%;
-}
-
-.add-activity,
-.remove-activity {
-    height: 55px;
-    width: 55px;
-    color: #FFFFFF;
-    border-radius: 15px;
-    border: none;
-    box-shadow: 0 3px 10px #C7C7C7;
-    margin-left: 10px;
-    font-size: 2.5em;
-    cursor: pointer;
-    transition: background-color 0.4s;
-}
-
-.add-activity {
-    background-color: #6DEE7A;
-}
-
-.add-activity:hover {
-    background-color: #5EC969;
-}
-
-.remove-activity {
-    background-color: #EE6D6D;
-}
-
-.remove-activity:hover {
-    background-color: #CC5959;
 }
 
 .container.added button {
@@ -92,4 +80,27 @@ input[type="text"] {
 
 .container.added:hover button {
     opacity: 1;
+}
+
+form {
+    position: relative;
+}
+
+.saveButton {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background-color: #43B4FF;
+    font-size: 1em;
+    height: 35px;
+    width: 160px;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.4s;
+}
+
+.saveButton:hover {
+    background-color: #3694D2;
 }

@@ -1,6 +1,7 @@
 import { useState } from "react";
-import "./add-day.css";
+import { useNavigate } from "react-router-dom";
 import ActivityField from "../../components/ActivityField/ActivityField";
+import styles from "./add-day.module.css";
 
 const today = new Date().toISOString().substring(0, 10);
 let activityId = 0;
@@ -8,6 +9,8 @@ let activityId = 0;
 function AddDay() {
     const [date, setDate] = useState(today);
     const [activities, setActivities] = useState([{ id: activityId, activity: "" }]);
+    const [journal, setJournal] = useState("");
+    const navigate = useNavigate();
 
     function handleDateChange(event) {
         setDate(event.target.value);
@@ -19,8 +22,7 @@ function AddDay() {
             { ...act, activity: value } : act));
     }
 
-    function handleAddActivity(event) {
-        event.preventDefault();
+    function handleAddActivity() {
         setActivities([...activities, { id: ++activityId, activity: "" }]);
     }
 
@@ -29,23 +31,51 @@ function AddDay() {
             activity.id !== id));
     }
 
+    function handleJournalChange(event) {
+        setJournal(event.target.value);
+    }
+
+    function handleSaveDay(event) {
+        event.preventDefault();
+        console.log("Form submitted");
+        console.log(activities);
+        console.log(journal);
+        navigate("/");
+    }
+
     const reverseActivities = activities.toReversed();
 
     return (
-        <form onSubmit={event => handleAddActivity(event)}>
+        <form onSubmit={event => handleSaveDay(event)}>
             <input type="date" data-date={formatDate(date)} value={date}
                 max={today} onChange={event => handleDateChange(event)} />
             <h1>What did you do today?</h1>
-            <ActivityField key={activityId} id={activityId}
-                activity={activities[activities.length - 1].activity}
-                handleActivityChange={handleActivityChange} isAdded={false} />
+
+            <div className={styles.container}>
+                <ActivityField key={activityId} id={activityId}
+                    activity={activities[activities.length - 1].activity}
+                    handleActivityChange={handleActivityChange}
+                    handleAddActivity={handleAddActivity} isAdded={false} />
+            </div>
+
             {reverseActivities.map(activity =>
                 activity.id === activityId ? "" :
-                <ActivityField key={activity.id} id={activity.id}
-                    activity={activity.activity}
-                    handleActivityChange={handleActivityChange}
-                    handleDeleteActivity={handleDeleteActivity} isAdded={true} />
+                <div className={`${styles.container} ${styles.added}`} key={activity.id}>
+                    <ActivityField key={activity.id} id={activity.id}
+                        activity={activity.activity}
+                        handleActivityChange={handleActivityChange}
+                        handleDeleteActivity={handleDeleteActivity} isAdded={true} />
+                </div>
             )}
+
+            <h2>How do you feel about today?</h2>
+            <div className={styles.container}>
+                <textarea placeholder="Add journal" value={journal}
+                    onChange={event => handleJournalChange(event)}>
+                </textarea>
+            </div>
+
+            <button className={styles.saveButton}>Save</button>
         </form>
     );
 }

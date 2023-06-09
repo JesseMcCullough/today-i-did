@@ -1,15 +1,17 @@
-function ActivityField({ id, activity, handleActivityChange, handleDeleteActivity, isAdded }) {
-    const divClassName = isAdded ? "container added" : "container";
+import styles from "./ActivityField.module.css";
 
+function ActivityField({ id, activity, handleActivityChange, handleAddActivity,
+    handleDeleteActivity, isAdded }) {
     return (
-        <div className={divClassName}>
+        <>
             <input type="text" value={activity} 
                 name="new-activity" onChange={event => handleActivityChange(event, id)}
                 placeholder="Add activity" />
-            {isAdded ? <button className="remove-activity"
+            {isAdded ? <button className={styles.removeActivity} type="button"
                 onClick={() => handleDeleteActivity(id)}>-</button> :
-                <button className="add-activity">+</button>}
-        </div>
+                <button className={styles.addActivity} type="button"
+                    onClick={() => handleAddActivity()}>+</button>}
+        </>
     );
 }
 
