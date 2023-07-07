@@ -1,0 +1,30 @@
+.dayCard {
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    max-width: 250px;
+    padding: 15px;
+}
+
+h2 {
+    font-size: 1.2em;
+    text-align: left;
+    margin: 0;
+    margin-bottom: 7px;
+}
+
+h3 {
+    font-size: 1em;
+    margin-bottom: 7px;
+}
+
+ul {
+    list-style-type: none;
+    margin-bottom: 20px;
+}
+
+.dayData {
+    box-shadow: var(--shadow);
+    padding: 10px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
