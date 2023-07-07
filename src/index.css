@@ -6,6 +6,7 @@
 
 :root {
     --text-color: #707070;
+    --shadow: 0 3px 10px #C7C7C7;
 }
 
 body {
