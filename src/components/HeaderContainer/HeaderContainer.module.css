@@ -1,0 +1,27 @@
+.headerContainer {
+    display: flex;
+    gap: 60px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.headerContainer h1 {
+    margin: 0;
+}
+
+.headerContainer input {
+    width: 100%;
+    height: 50px;
+    border: none;
+    outline: none;
+    padding: 20px;
+    font-size: 1em;
+    font-family: Arial;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+}
+
+.headerContainer button {
+    flex-shrink: 0;
+}
